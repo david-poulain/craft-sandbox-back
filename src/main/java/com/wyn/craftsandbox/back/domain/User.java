@@ -1,11 +1,11 @@
-package com.wyn.craftsandbox.back.exposition;
+package com.wyn.craftsandbox.back.domain;
 
-public class UserDTO {
+public class User {
     private final int id;
     private final String firstName;
     private final String lastName;
 
-    public UserDTO(int id, String firstName, String lastName) {
+    public User(int id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
