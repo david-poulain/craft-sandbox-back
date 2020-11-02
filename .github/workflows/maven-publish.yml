@@ -19,10 +19,11 @@ jobs:
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
+    - name: Test
+      run: mvn test
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-    - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -Dregistry=https://maven.pkg.github.com/david-poulain -Dtoken=GH_TOKEN
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
+    - name: Verify
+      run: mvn verify

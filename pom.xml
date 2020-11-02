@@ -86,12 +86,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>github</id>
-            <name>WYN GitHub Packages</name>
-            <url>https://maven.pkg.github.com/wyn/craft-sandbox-back</url>
-        </repository>
-    </distributionManagement>
 </project>
