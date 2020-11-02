@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,7 +22,7 @@ public class UserController {
     @GetMapping
     public ResponseEntity<List<UserDTO>> users() {
         return ResponseEntity.ok(
-                Arrays.stream(userRepository.allUsers()).map(this::toDTO).collect(Collectors.toList())
+                userRepository.allUsers().stream().map(this::toDTO).collect(Collectors.toList())
         );
     }
 
@@ -33,9 +32,14 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<UserDTO> addUser(@RequestBody UserCreationRequest userCreationRequest) {
-        return ResponseEntity.ok(
-                toDTO(userRepository.addUser(userCreationRequest.getFirstName(), userCreationRequest.getLastName()))
+        User user = new User(
+                userRepository.getNextId(),
+                userCreationRequest.getFirstName(),
+                userCreationRequest.getLastName()
         );
+        userRepository.saveUser(user);
+
+        return ResponseEntity.ok(toDTO(user));
     }
 
 }

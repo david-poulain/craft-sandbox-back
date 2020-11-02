@@ -1,7 +1,11 @@
 package com.wyn.craftsandbox.back.domain;
 
-public interface UserRepository {
-    User[] allUsers();
+import java.util.List;
 
-    User addUser(String firstName, String lastName);
+public interface UserRepository {
+    List<User> allUsers();
+
+    int getNextId();
+
+    void saveUser(User user);
 }
