@@ -30,9 +30,9 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public void saveUser(User user) {
-        JpaUser jPauser = new JpaUser(user);
+        JpaUser jpaUser = new JpaUser(user);
         nextId++;
-        jpaUserRepository.save(jPauser).toUser();
+        jpaUserRepository.save(jpaUser).toUser();
     }
 
 }
