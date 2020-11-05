@@ -38,7 +38,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     @Transactional
-    public void saveUser(User user) {
+    public void addUser(User user) {
         jpaUserIdGeneratorRepository.updateNextGeneratedUserId(USER_ID_GENERATOR_ID, getNextId() + 1);
         jpaUserRepository.save(new JpaUser(user)).toUser();
     }

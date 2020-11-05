@@ -37,7 +37,7 @@ public class UserController {
                 userCreationRequest.getFirstName(),
                 userCreationRequest.getLastName()
         );
-        userRepository.saveUser(user);
+        userRepository.addUser(user);
 
         return ResponseEntity.ok(toDTO(user));
     }

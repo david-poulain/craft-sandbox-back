@@ -7,5 +7,5 @@ public interface UserRepository {
 
     int getNextId();
 
-    void saveUser(User user);
+    void addUser(User user);
 }
