@@ -6,8 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity(name = "JpaUser")
-@Table(name = "USERS", schema = "SCHEMA")
+@Entity
+@Table(name = "users", schema = "schema_wyn")
 public class JpaUser {
     @Id
     private int id;
