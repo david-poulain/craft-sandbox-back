@@ -20,7 +20,7 @@ class UserRepositoryIT {
     void user_next_id_is_incremented_when_adding_a_new_user() {
         int nextId = repository.getNextId();
 
-        User user = new User(nextId, "Chuck", "NORRIS");
+        User user = new User(nextId, "James", "Bond");
         repository.saveUser(user);
 
         assertThat(repository.getNextId()).isEqualTo(nextId + 1);
