@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(path = "api/v1/user")
+@CrossOrigin
 public class UserController {
     private final UserRepository userRepository;
 
